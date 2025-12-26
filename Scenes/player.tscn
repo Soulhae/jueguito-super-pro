@@ -5,10 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://bpmoxvabkl0pn" path="res://icon.svg" id="2_it8n0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gbyq6"]
-size = Vector2(64, 64)
+size = Vector2(104, 84)
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.5, 0.5)
+collision_mask = 3
 script = ExtResource("1_88kja")
 bulletScene = ExtResource("2_6t5aa")
 
