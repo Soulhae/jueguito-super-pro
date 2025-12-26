@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c2dr7y0u5qkmm"]
+[gd_scene load_steps=9 format=3 uid="uid://c2dr7y0u5qkmm"]
 
 [ext_resource type="Texture2D" uid="uid://bpmoxvabkl0pn" path="res://icon.svg" id="1_0154r"]
 [ext_resource type="Script" uid="uid://bq5ylo0kt2rga" path="res://Scripts/boss.gd" id="1_wwfse"]
@@ -74,10 +74,62 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(0.5, 0.5)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_n725y"]
+resource_name = "charge"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(0.7, 0.4), Vector2(0.4, 0.7), Vector2(0.7, 0.4), Vector2(0.5, 0.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5, 0.6, 0.8, 0.85, 0.9, 0.95, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.33958188, 0.8737036, 0.86268526, 1), Color(0.34117648, 0.8745098, 0.8627451, 0.43137255), Color(0.34117648, 0.8745098, 0.8627451, 1), Color(1, 0.15162417, 0.25747442, 1), Color(4.415934, 0.8262239, 1.2749379, 1), Color(1, 0.15294118, 0.25882354, 1), Color(2.454227, 0.43957022, 0.6914024, 1), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 6.2831855, 0.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n725y"]
 _data = {
 &"RESET": SubResource("Animation_ukjjc"),
+&"charge": SubResource("Animation_n725y"),
 &"test_attack": SubResource("Animation_cxrok")
 }
 
