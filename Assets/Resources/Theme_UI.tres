@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://c8a6ryr16pspk"]
+
+[ext_resource type="FontFile" uid="uid://ctk813ax54gkc" path="res://Assets/Font/m5x7.ttf" id="1_vujfa"]
+
+[resource]
+default_font = ExtResource("1_vujfa")
+default_font_size = 32

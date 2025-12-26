@@ -4,10 +4,13 @@ var speed = 250
 var max_hp: int = 100
 var current_hp: int
 @export var bulletScene: PackedScene
-var dodge_duration = 0.75
-var dodge_cooldown = 2
+@export var dodge_duration = 0.75
+@export var dodge_cooldown = 2
 var can_dodge = true
 var is_dodging = false
+
+
+signal dash_state_changed(is_ready, duration)
 
 func _init():
 	position.x = 768
@@ -47,6 +50,8 @@ func _physics_process(_delta: float) -> void:
 func start_dodge():
 	can_dodge = false
 	is_dodging = true
+	
+	dash_state_changed.emit(false, dodge_duration + dodge_cooldown) # Esto es para el UI
 	
 	set_collision_layer_value(1, false)
 	set_collision_mask_value(2, false)
