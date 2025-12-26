@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2dr7y0u5qkmm"]
+[gd_scene load_steps=5 format=3 uid="uid://c2dr7y0u5qkmm"]
 
 [ext_resource type="Texture2D" uid="uid://bpmoxvabkl0pn" path="res://icon.svg" id="1_0154r"]
 [ext_resource type="Script" uid="uid://bq5ylo0kt2rga" path="res://Scripts/boss.gd" id="1_wwfse"]
+[ext_resource type="PackedScene" uid="uid://bdc7skxt8xvv8" path="res://Scenes/bossbullet.tscn" id="2_cxrok"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wwfse"]
 size = Vector2(108, 96)
@@ -10,6 +11,7 @@ size = Vector2(108, 96)
 scale = Vector2(0.5, 0.5)
 collision_layer = 2
 script = ExtResource("1_wwfse")
+bulletScene = ExtResource("2_cxrok")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_0154r")

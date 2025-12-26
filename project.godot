@@ -15,9 +15,13 @@ run/main_scene="uid://cjud0vkd2ejui"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameManager="*res://Scripts/game_manager.gd"
+
 [display]
 
-window/size/viewport_width=648
+window/size/viewport_width=1536
 window/size/viewport_height=864
 window/stretch/mode="canvas_items"
 
@@ -40,7 +44,7 @@ dash={
 
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Enemies"
-2d_physics/layer_3="PlayerBullets"
+2d_physics/layer_3="Bullets"
 2d_physics/layer_4="World"
 
 [rendering]
