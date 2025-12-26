@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cjud0vkd2ejui"]
+[gd_scene load_steps=6 format=3 uid="uid://cjud0vkd2ejui"]
 
 [ext_resource type="PackedScene" uid="uid://hbm4uamsda64" path="res://Scenes/player.tscn" id="1_a02cp"]
 [ext_resource type="PackedScene" uid="uid://cuvapsfung43h" path="res://Scenes/fondo.tscn" id="2_go701"]
 [ext_resource type="PackedScene" uid="uid://c2dr7y0u5qkmm" path="res://Scenes/boss.tscn" id="3_5a7ea"]
 [ext_resource type="PackedScene" uid="uid://ck5qnh4tm63ml" path="res://Scenes/ui_placeholder.tscn" id="4_8j60k"]
+[ext_resource type="PackedScene" uid="uid://r5fk8ff5gvst" path="res://Scenes/boss_paths.tscn" id="5_fo5ed"]
 
 [node name="World" type="Node2D"]
 
@@ -17,3 +18,5 @@ position = Vector2(3, 0)
 [node name="UI_gameplay" parent="." instance=ExtResource("4_8j60k")]
 offset_left = 1092.0
 offset_right = 1092.0
+
+[node name="BossPaths" parent="." instance=ExtResource("5_fo5ed")]

@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://r5fk8ff5gvst"]
+
+[sub_resource type="Curve2D" id="Curve2D_mriac"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 570, 760, 0, 0, 0, 0, 512, 662, 0, 0, 0, 0, 549, 580, 0, 0, 0, 0, 622, 548, 0, 0, 0, 0, 673, 548, 0, 0, 0, 0, 725, 557, 0, 0, 0, 0, 760, 572)
+}
+point_count = 7
+
+[sub_resource type="Curve2D" id="Curve2D_hbdx0"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 778, 712, 0, 0, 0, 0, 945, 551, 0, 0, 0, 0, 570, 375, 0, 0, 0, 0, 849, 311)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_b002u"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 928, 762, 0, 0, 0, 0, 525, 762, 0, 0, 0, 0, 502, 699, 0, 0, 0, 0, 515, 602, 0, 0, 0, 0, 565, 538, 0, 0, 0, 0, 620, 504, 0, 0, 0, 0, 702, 720, 0, 0, 0, 0, 792, 524, 0, 0, 0, 0, 857, 527, 0, 0, 0, 0, 939, 575)
+}
+point_count = 10
+
+[node name="BossPaths" type="Node2D"]
+
+[node name="Path2D" type="Path2D" parent="." groups=["boss_paths"]]
+curve = SubResource("Curve2D_mriac")
+
+[node name="Path2D2" type="Path2D" parent="." groups=["boss_paths"]]
+curve = SubResource("Curve2D_hbdx0")
+
+[node name="Path2D3" type="Path2D" parent="." groups=["boss_paths"]]
+curve = SubResource("Curve2D_b002u")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(444, 0)
+
+[node name="Marker2D3" type="Marker2D" parent="."]
+position = Vector2(1092, 864)
+
+[node name="Marker2D4" type="Marker2D" parent="."]
+position = Vector2(444, 864)
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(1092, 0)

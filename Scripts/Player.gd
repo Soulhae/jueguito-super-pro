@@ -31,17 +31,18 @@ func _physics_process(_delta: float) -> void:
 		start_dodge()
 	
 	var shooting = Input.is_action_just_pressed("test")
-	if shooting:
+	if shooting and !is_dodging:
 		var bullet = bulletScene.instantiate()
 		bullet.position.x = position.x
 		bullet.position.y = position.y + 32
 		get_parent().add_child(bullet)
 	
 	var half_width = $Sprite2D.get_rect().size.x * scale.x / 2
+	var half_height = $Sprite2D.get_rect().size.y * scale.y / 2
 	var min_x = GameManager.PLAYFIELD_MARGIN_LEFT + half_width
 	var max_x = GameManager.PLAYFIELD_MARGIN_RIGHT - half_width
 	position.x = clamp(position.x, min_x, max_x)
-	position.y = clamp(position.y, 0, get_viewport_rect().size.y)
+	position.y = clamp(position.y, 0 + half_height, get_viewport_rect().size.y - half_height)
 
 
 func start_dodge():
