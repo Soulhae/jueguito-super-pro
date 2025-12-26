@@ -1,0 +1,97 @@
+[gd_scene load_steps=6 format=3 uid="uid://cs7suujeqe4ee"]
+
+[ext_resource type="Script" uid="uid://ckt3b6rn03c03" path="res://Scenes/Inicio/inicio.gd" id="1_6bxyb"]
+[ext_resource type="PackedScene" uid="uid://cuvapsfung43h" path="res://Scenes/fondo.tscn" id="1_notyv"]
+
+[sub_resource type="Animation" id="Animation_notyv"]
+resource_name = "Inicio"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Botones/VBoxContainer2/Título:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6bxyb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Botones/VBoxContainer2/Título:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dg7ge"]
+_data = {
+&"Inicio": SubResource("Animation_notyv"),
+&"RESET": SubResource("Animation_6bxyb")
+}
+
+[node name="Inicio" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6bxyb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_dg7ge")
+}
+
+[node name="Fondo" parent="." instance=ExtResource("1_notyv")]
+position = Vector2(422, 42)
+
+[node name="Botones" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Botones"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -270.5
+offset_top = -149.5
+offset_right = 270.5
+offset_bottom = 149.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 100
+
+[node name="Título" type="Label" parent="Botones/VBoxContainer2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "JUEGO PRO"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Botones/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="Iniciar" type="Button" parent="Botones/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Iniciar"
+
+[node name="Salir" type="Button" parent="Botones/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Salir
+"

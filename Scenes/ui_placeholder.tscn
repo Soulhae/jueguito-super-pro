@@ -1,6 +1,8 @@
-[gd_scene format=3 uid="uid://clu35re8uhota"]
+[gd_scene load_steps=2 format=3 uid="uid://ck5qnh4tm63ml"]
 
-[node name="UIPlaceholder" type="Control"]
+[ext_resource type="PackedScene" uid="uid://cjud0vkd2ejui" path="res://Scenes/world.tscn" id="1_1ch2m"]
+
+[node name="UI_gameplay" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -8,13 +10,29 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 444.0
-offset_bottom = 864.0
+[node name="World" parent="." instance=ExtResource("1_1ch2m")]
 
-[node name="ColorRect2" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = 1092.0
-offset_right = 1536.0
-offset_bottom = 864.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control" type="Control" parent="CanvasLayer/HBoxContainer"]
+custom_minimum_size = Vector2(648, 864)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
