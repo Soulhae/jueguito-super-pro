@@ -1,10 +1,11 @@
 extends CharacterBody2D
 
-@export var speed = 250
-@export var hp = 500
+var speed = 250
+var hp: int = 5000
+@export var bulletScene: PackedScene
 
 func _init():
-	position.x = 324
+	position.x = 768
 	position.y = 800
 
 func _physics_process(_delta: float) -> void:

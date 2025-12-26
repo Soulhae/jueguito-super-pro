@@ -12,3 +12,9 @@ position = Vector2(3, 0)
 [node name="Player" parent="." instance=ExtResource("1_a02cp")]
 
 [node name="Boss" parent="." instance=ExtResource("3_5a7ea")]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(444, 0)
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(1092, 0)

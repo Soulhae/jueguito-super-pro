@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
 var speed = 250
+var max_hp: int = 100
+var current_hp: int
 @export var bulletScene: PackedScene
 var dodge_duration = 0.75
 var dodge_cooldown = 2
@@ -8,8 +10,12 @@ var can_dodge = true
 var is_dodging = false
 
 func _init():
-	position.x = 324
+	position.x = 768
 	position.y = 64
+
+
+func _ready():
+	current_hp = max_hp
 
 
 func _physics_process(_delta: float) -> void:
@@ -30,8 +36,11 @@ func _physics_process(_delta: float) -> void:
 		bullet.position.x = position.x
 		bullet.position.y = position.y + 32
 		get_parent().add_child(bullet)
-		
-	position.x = clamp(position.x, 0, get_viewport_rect().size.x)
+	
+	var half_width = $Sprite2D.get_rect().size.x * scale.x / 2
+	var min_x = GameManager.PLAYFIELD_MARGIN_LEFT + half_width
+	var max_x = GameManager.PLAYFIELD_MARGIN_RIGHT - half_width
+	position.x = clamp(position.x, min_x, max_x)
 	position.y = clamp(position.y, 0, get_viewport_rect().size.y)
 
 
@@ -62,3 +71,16 @@ func end_dodge():
 	
 	await get_tree().create_timer(dodge_cooldown).timeout
 	can_dodge = true
+
+
+func take_damage(amount: int) -> void:
+	if is_dodging:
+		return
+	
+	current_hp -= amount
+	if current_hp < 0:
+		current_hp = 0
+	
+	if current_hp == 0:
+		queue_free()
+	
