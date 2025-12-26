@@ -40,6 +40,7 @@ func start_dodge():
 	is_dodging = true
 	
 	set_collision_layer_value(1, false)
+	set_collision_mask_value(2, false)
 	
 	var tween = create_tween().set_parallel(true)
 	tween.tween_property($Sprite2D,"scale",Vector2(0.75,0.75), 0.1)
@@ -53,6 +54,7 @@ func end_dodge():
 	is_dodging = false
 	
 	set_collision_layer_value(1, true)
+	set_collision_mask_value(2, true)
 	
 	var tween = create_tween().set_parallel(true)
 	tween.tween_property($Sprite2D, "scale", Vector2(1.0, 1.0), 0.1)
