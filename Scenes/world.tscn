@@ -20,3 +20,7 @@ offset_left = 1092.0
 offset_right = 1092.0
 
 [node name="BossPaths" parent="." instance=ExtResource("5_fo5ed")]
+offset_left = 132.0
+offset_top = 478.0
+offset_right = 132.0
+offset_bottom = 478.0

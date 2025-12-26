@@ -29,6 +29,9 @@ window/stretch/mode="canvas_items"
 [global_group]
 
 boss_paths=""
+[gui]
+
+theme/custom="uid://c8a6ryr16pspk"
 
 [input]
 
